@@ -10,4 +10,18 @@
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="Base.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorAccent">@color/gold</item>
+    </style>
+
+    <style name="Base.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorAccent">@color/gold</item>
+    </style>
+
+    <style name="Base.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorAccent">@color/gold</item>
+    </style>
 </resources>

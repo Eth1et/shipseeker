@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/background"
-        tools:context=".MainActivity">
+        tools:context=".MenuActivity">
 
         <Button
             android:id="@+id/register_button"
