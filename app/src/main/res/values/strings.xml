@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ShipSeeker</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="username">Username</string>
+    <string name="email_example">yourname@email.com</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="registration">Registration</string>
+    <string name="go_back_to_previous_page">Go back to previous page</string>
+    <string name="enter_account">Enter Account</string>
+</resources>
