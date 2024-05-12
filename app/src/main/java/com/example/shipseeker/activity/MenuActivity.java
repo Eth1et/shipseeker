@@ -1,27 +1,34 @@
-package com.example.shipseeker;
+package com.example.shipseeker.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.firebase.auth.FirebaseAuth;
+import com.example.shipseeker.FirebaseManager;
+import com.example.shipseeker.R;
+import com.example.shipseeker.model.User;
 
 public class MenuActivity extends AppCompatActivity {
 
     private static final String LOG_TAG = MenuActivity.class.getName();
 
-    private FirebaseAuth auth;
+    private int currentLayoutId = -1;
+
+    EditText emailEditText;
+    EditText passwordEditText;
 
     private void openLayout(int layoutId) {
+        currentLayoutId = layoutId;
+
         setContentView(layoutId);
         EdgeToEdge.enable(this);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -34,9 +41,6 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        auth = FirebaseAuth.getInstance();
-
         openLayout(R.layout.main_menu);
     }
 
@@ -50,8 +54,8 @@ public class MenuActivity extends AppCompatActivity {
 
     public void register(View view) {
         EditText usernameEditText = findViewById(R.id.username);
-        EditText emailEditText = findViewById(R.id.email);
-        EditText passwordEditText = findViewById(R.id.password);
+        emailEditText = findViewById(R.id.email);
+        passwordEditText = findViewById(R.id.password);
         EditText confirmPasswordEditText = findViewById(R.id.confirmPassword);
 
         String username = usernameEditText.getText().toString();
@@ -69,19 +73,16 @@ public class MenuActivity extends AppCompatActivity {
             return;
         }
 
-        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, task -> {
-            if(task.isSuccessful()){
+        User newUser = new User(username, email, false);
+
+        FirebaseManager.getInstance().createUser(this, newUser, password).observe(this, isSuccessful -> {
+            if(isSuccessful){
                 Log.i(LOG_TAG, "Registered user: " + username);
                 signIn(email, password);
             }else{
                 Log.d(LOG_TAG, "Couldnt create user");
-                Toast.makeText(MenuActivity.this, "Exceptions: " + task.getException(), Toast.LENGTH_LONG).show();
             }
         });
-    }
-
-    public void closeRegister(View view) {
-        openLayout(R.layout.main_menu);
     }
 
     public void login(View view) {
@@ -100,16 +101,22 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void signIn(String email, String password){
-        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, t -> {
-            if (t.isSuccessful()){
+        FirebaseManager.getInstance().loginUser(this, email, password).observe(this, isSuccessful -> {
+            if (isSuccessful){
                 Intent intent = new Intent(this, MainActivity.class);
                 intent.putExtra("SECRET_KEY", 991412911);
                 startActivity(intent);
             }else{
                 Log.e(LOG_TAG, "Couldn't log in");
-                openLayout(R.layout.login);
+                if(currentLayoutId != R.layout.login){
+                    openLayout(R.layout.login);
+                }
             }
         });
+    }
+
+    public void closeRegister(View view) {
+        openLayout(R.layout.main_menu);
     }
 
     public void closeLogin(View view) {

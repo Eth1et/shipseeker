@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/background"
-        tools:context=".MenuActivity">
+        tools:context=".activity.MenuActivity">
 
         <Button
             android:id="@+id/login_button"
@@ -79,6 +79,7 @@
             android:textCursorDrawable="@color/white"
             android:textSize="25sp"
             android:textStyle="bold"
+            android:textColorHighlight="@color/gold"
             app:layout_constraintBottom_toTopOf="@+id/password"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -100,6 +101,7 @@
             android:textColorHint="@color/dark_blue"
             android:textColorLink="@color/black"
             android:textCursorDrawable="@color/white"
+            android:textColorHighlight="@color/gold"
             android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/login_button"

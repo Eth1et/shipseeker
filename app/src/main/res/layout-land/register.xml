@@ -14,13 +14,14 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/background"
-        tools:context=".MenuActivity">
+        tools:context=".activity.MenuActivity">
 
         <Button
             android:id="@+id/register_button"
             android:layout_width="200dp"
             android:layout_height="55dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
             android:onClick="register"
             android:text="@string/register"
             android:textColor="@color/dark_blue"
@@ -28,6 +29,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintVertical_bias="0.0"
             app:rippleColor="@color/gold" />
 
         <TextView
@@ -46,11 +49,10 @@
         <EditText
             android:id="@+id/username"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:layout_marginStart="35dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="45dp"
             android:layout_marginEnd="35dp"
-            android:layout_marginBottom="30dp"
             android:autofillHints="username"
             android:backgroundTint="@color/gold"
             android:ems="10"
@@ -60,21 +62,20 @@
             android:textColorHint="@color/dark_blue"
             android:textColorLink="@color/black"
             android:textCursorDrawable="@color/white"
+            android:textColorHighlight="@color/gold"
             android:textSize="25sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/email"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/title" />
 
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="35dp"
-            android:layout_marginBottom="100dp"
             android:autofillHints="emailAddress"
             android:backgroundTint="@color/gold"
             android:ems="10"
@@ -83,62 +84,63 @@
             android:textColor="@color/white"
             android:textColorHint="@color/dark_blue"
             android:textColorLink="@color/black"
+            android:textColorHighlight="@color/gold"
             android:textCursorDrawable="@color/white"
             android:textSize="25sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/register_button"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:autofillHints="password"
-            android:backgroundTint="@color/gold"
-            android:ems="10"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:textColor="@color/white"
-            android:textColorHint="@color/dark_blue"
-            android:textColorLink="@color/black"
-            android:textCursorDrawable="@color/white"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/register_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/email"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/username" />
 
-        <EditText
-            android:id="@+id/confirmPassword"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="35dp"
-            android:layout_marginBottom="15dp"
-            android:autofillHints="password"
-            android:backgroundTint="@color/gold"
-            android:ems="10"
-            android:hint="@string/confirm_password"
-            android:inputType="textPassword"
-            android:textColor="@color/white"
-            android:textColorHint="@color/dark_blue"
-            android:textColorLink="@color/black"
-            android:textCursorDrawable="@color/white"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/register_button"
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:dividerPadding="15dp"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/email"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/email">
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:autofillHints="password"
+                android:backgroundTint="@color/gold"
+                android:ems="10"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/gold"
+                android:textColorHint="@color/dark_blue"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/confirmPassword"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:autofillHints="password"
+                android:backgroundTint="@color/gold"
+                android:ems="10"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/gold"
+                android:textColorHint="@color/dark_blue"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/goBack"

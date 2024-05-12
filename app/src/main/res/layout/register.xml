@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/background"
-        tools:context=".MenuActivity">
+        tools:context=".activity.MenuActivity">
 
         <Button
             android:id="@+id/register_button"
@@ -71,6 +71,7 @@
             android:hint="@string/username"
             android:inputType="text"
             android:textColor="@color/white"
+            android:textColorHighlight="@color/gold"
             android:textColorHint="@color/dark_blue"
             android:textColorLink="@color/black"
             android:textCursorDrawable="@color/white"
@@ -95,6 +96,7 @@
             android:textColor="@color/white"
             android:textColorHint="@color/dark_blue"
             android:textColorLink="@color/black"
+            android:textColorHighlight="@color/gold"
             android:textCursorDrawable="@color/white"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -113,6 +115,7 @@
             android:backgroundTint="@color/gold"
             android:ems="10"
             android:hint="@string/password"
+            android:textColorHighlight="@color/gold"
             android:inputType="textPassword"
             android:textColor="@color/white"
             android:textColorHint="@color/dark_blue"
@@ -131,6 +134,7 @@
             android:layout_marginStart="35dp"
             android:layout_marginEnd="35dp"
             android:layout_marginBottom="30dp"
+            android:textColorHighlight="@color/gold"
             android:autofillHints="password"
             android:backgroundTint="@color/gold"
             android:ems="10"

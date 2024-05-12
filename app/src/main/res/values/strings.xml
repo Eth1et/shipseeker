@@ -19,4 +19,31 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="content">content</string>
+    <string name="route_name">Route Name</string>
+    <string name="route_description">Route Description</string>
+    <string name="route_departure_place">Route Departure Place</string>
+    <string name="route_departure_time">Route Departure Time</string>
+    <string name="route_price">Route Price</string>
+    <string name="image_of_the_cruise_route">image of the cruise route</string>
+    <string name="_15">15</string>
+    <string name="slots_icon">slots icon</string>
+    <string name="welcome_to_ship_seeker">Welcome to Ship Seeker!</string>
+    <string name="ship_seeker_description">ShipSeeker is your passport to adventure on the high seas! Seamlessly book your dream cruise ship routes with ease. Explore exotic destinations, experience luxurious accommodations, and create unforgettable memories—all at your fingertips. Whether you\'re seeking relaxation or exhilarating escapades, ShipSeeker empowers you to embark on the voyage of a lifetime.</string>
+    <string name="hot_deal">Hot Deal</string>
+    <string name="book">book</string>
+    <string name="cancel">cancel</string>
+    <string name="create_cruise_route">Create Cruise Route</string>
+    <string name="create">Create</string>
+    <string name="preview_of_the_uploaded_image">preview of the uploaded image</string>
+    <string name="admin">Admin</string>
+    <string name="route_slots">Route Slots</string>
+    <string name="upload_image">Upload Image</string>
+    <string name="pick_departure_date_and_time">Pick Departure Date and Time</string>
+    <string name="example_date_time">05.14. 15:30</string>
+    <string name="logo_of_calendar">logo of calendar</string>
+    <string name="unset_date_and_time">Unset date and time</string>
+    <string name="pick">pick</string>
+    <string name="delete">Delete</string>
+    <string name="goes_to_the_previous_route">goes to the previous route</string>
+    <string name="upload">upload</string>
 </resources>

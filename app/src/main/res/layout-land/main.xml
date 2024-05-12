@@ -16,8 +16,8 @@
         <LinearLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/background"
+            android:layout_height="52dp"
+            android:background="@color/dark_blue"
             android:orientation="horizontal">
 
             <ImageView
@@ -25,40 +25,46 @@
                 android:layout_width="83dp"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/app_name"
-                app:srcCompat="@drawable/logo" />
+                app:srcCompat="@drawable/logo_nobg" />
 
             <TextView
                 android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="start"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
                 android:minHeight="?actionBarSize"
                 android:padding="@dimen/appbar_padding"
+                android:paddingStart="0dp"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingEnd="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp"
                 android:shadowColor="@color/black"
                 android:shadowDx="5"
                 android:shadowDy="5"
                 android:shadowRadius="5"
                 android:text="@string/app_name"
-                android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
                 android:textColor="@color/gold"
                 android:textColorHighlight="@color/white"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/dark_blue"
+                app:tabBackground="@color/dark_blue"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/gold"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/gold"
+                app:tabTextColor="@color/white" />
         </LinearLayout>
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/dark_blue"
-            app:tabBackground="@color/dark_blue"
-            app:tabGravity="fill"
-            app:tabIndicatorColor="@color/gold"
-            app:tabSelectedTextColor="@color/gold"
-            app:tabTextColor="@color/white">
 
-        </com.google.android.material.tabs.TabLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager

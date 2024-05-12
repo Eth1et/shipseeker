@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cruiseRoute"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue"
+    android:layoutMode="clipBounds"
+    android:minHeight="250dp">
+
+    <ImageView
+        android:id="@+id/routeImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="130dp"
+        android:contentDescription="@string/image_of_the_cruise_route"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/montenegro" />
+
+    <TextView
+        android:id="@+id/routeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:shadowColor="@color/black"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:text="@string/route_name"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/routeImage"
+        app:layout_constraintTop_toTopOf="@+id/routeImage" />
+
+    <TextView
+        android:id="@+id/routeDesc"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/route_description"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@+id/routeImage"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/routeImage"
+        app:layout_constraintTop_toBottomOf="@+id/routeDepartPlace" />
+
+    <TextView
+        android:id="@+id/routeDepartPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/route_departure_place"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/routeImage"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toEndOf="@+id/routeDepartTime"
+        app:layout_constraintTop_toBottomOf="@+id/routeImage" />
+
+    <TextView
+        android:id="@+id/routeDepartTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/route_departure_time"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/routeImage"
+        app:layout_constraintTop_toBottomOf="@+id/routeImage" />
+
+    <TextView
+        android:id="@+id/routePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/route_price"
+        android:textAlignment="textEnd"
+        android:textColor="@color/gold"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/ticket"
+        android:layout_width="43dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:contentDescription="@string/slots_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/routeImage"
+        app:layout_constraintEnd_toEndOf="@+id/routeImage"
+        app:srcCompat="@drawable/sharp_airline_seat_recline_extra_24" />
+
+    <TextView
+        android:id="@+id/ticketNumber"
+        android:layout_width="53dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="5dp"
+        android:shadowColor="@color/black"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:text="@string/_15"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ticket"
+        app:layout_constraintEnd_toStartOf="@+id/ticket"
+        app:layout_constraintTop_toTopOf="@+id/ticket" />
+
+    <Button
+        android:id="@+id/buttonBook"
+        android:layout_width="143dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/book"
+        android:textColor="@color/black"
+        android:textSize="23sp"
+        android:theme="@style/WhiteBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/routePrice"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/routeDesc"
+        app:layout_constraintTop_toBottomOf="@+id/routeDesc"
+        app:rippleColor="@color/gold" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

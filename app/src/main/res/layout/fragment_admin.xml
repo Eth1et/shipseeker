@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    tools:context=".fragment.AdminFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/dark_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/createTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/create_cruise_route"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/createRouteName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:autofillHints="name"
+                android:ems="10"
+                android:hint="@string/route_name"
+                android:inputType="text"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/gold"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/gold"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/createTitle" />
+
+            <EditText
+                android:id="@+id/createRouteDesc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:autofillHints="description"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/route_description"
+                android:inputType="textMultiLine"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/gold"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/gold"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/createRouteName" />
+
+            <EditText
+                android:id="@+id/createRouteDepartPlace"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:autofillHints="geological_place"
+                android:ems="10"
+                android:hint="@string/route_departure_place"
+                android:inputType="text"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/gold"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/gold"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/createRouteDesc" />
+
+            <LinearLayout
+                android:id="@+id/createDepartTimestampHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/createRouteDepartPlace">
+
+                <ImageView
+                    android:id="@+id/calendarLogo"
+                    android:layout_width="40dp"
+                    android:layout_height="37dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="@string/logo_of_calendar"
+                    android:src="@drawable/baseline_calendar_month_24" />
+
+                <TextView
+                    android:id="@+id/createRouteTimestamp"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:autofillHints="price"
+                    android:ems="10"
+                    android:text="@string/example_date_time"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textColorHighlight="@color/gold"
+                    android:textColorHint="@color/white"
+                    android:textColorLink="@color/gold"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/createDepartTimestampHolder" />
+
+                <Button
+                    android:id="@+id/createTimestampButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:maxWidth="200dp"
+                    android:text="@string/pick"
+                    android:textColor="@color/dark_blue"
+                    android:theme="@style/WhiteBtn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/createRouteDepartPlace"
+                    app:rippleColor="@color/gold" />
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/createRoutePrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:autofillHints="price"
+                android:ems="10"
+                android:hint="@string/route_price"
+                android:inputType="number"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/gold"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/gold"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/createDepartTimestampHolder" />
+
+            <EditText
+                android:id="@+id/createRouteSlots"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:autofillHints="slots"
+                android:ems="10"
+                android:hint="@string/route_slots"
+                android:inputType="number"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/gold"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/gold"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/createRoutePrice" />
+
+            <LinearLayout
+                android:id="@+id/createImageLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/createRouteSlots">
+
+                <ImageView
+                    android:id="@+id/createImagePreview"
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/preview_of_the_uploaded_image"
+                    android:src="@drawable/montenegro" />
+
+                <Button
+                    android:id="@+id/createAddImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:maxWidth="200dp"
+                    android:text="@string/upload"
+                    android:textColor="@color/dark_blue"
+                    android:theme="@style/WhiteBtn"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/createImageLayout"
+                    app:rippleColor="@color/gold" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/createButton"
+                android:layout_width="200dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:text="@string/create"
+                android:textColor="@color/dark_blue"
+                android:theme="@style/WhiteBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/createImageLayout"
+                app:rippleColor="@color/gold" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cruiseRoute"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="400dp"
+            android:background="@color/dark_blue"
+            android:layoutMode="clipBounds"
+            android:minHeight="250dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraintLayout">
+
+            <ImageView
+                android:id="@+id/deleteRouteImage"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="130dp"
+                android:contentDescription="@string/image_of_the_cruise_route"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/montenegro" />
+
+            <TextView
+                android:id="@+id/deleteRouteName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:shadowColor="@color/black"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/route_name"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/deleteRouteImage"
+                app:layout_constraintTop_toTopOf="@+id/deleteRouteImage" />
+
+            <TextView
+                android:id="@+id/deleteRouteDesc"
+                android:layout_width="0dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/route_description"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="@+id/deleteRouteImage"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/deleteRouteImage"
+                app:layout_constraintTop_toBottomOf="@+id/deleteRouteDepartPlace" />
+
+            <TextView
+                android:id="@+id/deleteRouteDepartPlace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/route_departure_place"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/deleteRouteImage"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintStart_toEndOf="@+id/deleteRouteDepartTime"
+                app:layout_constraintTop_toBottomOf="@+id/deleteRouteImage" />
+
+            <TextView
+                android:id="@+id/deleteRouteDepartTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/route_departure_time"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/deleteRouteImage"
+                app:layout_constraintTop_toBottomOf="@+id/deleteRouteImage" />
+
+            <TextView
+                android:id="@+id/deleteRoutePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="15dp"
+                android:text="@string/route_price"
+                android:textAlignment="textEnd"
+                android:textColor="@color/gold"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/deleteTicket"
+                android:layout_width="43dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:contentDescription="@string/slots_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/deleteRouteImage"
+                app:layout_constraintEnd_toEndOf="@+id/deleteRouteImage"
+                app:srcCompat="@drawable/sharp_airline_seat_recline_extra_24" />
+
+            <TextView
+                android:id="@+id/deleteTicketNumber"
+                android:layout_width="53dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="5dp"
+                android:shadowColor="@color/black"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/_15"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/deleteTicket"
+                app:layout_constraintEnd_toStartOf="@+id/deleteTicket"
+                app:layout_constraintTop_toTopOf="@+id/deleteTicket" />
+
+            <Button
+                android:id="@+id/buttonDelete"
+                android:layout_width="143dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:text="@string/delete"
+                android:textColor="@color/black"
+                android:textSize="23sp"
+                android:theme="@style/WhiteBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/deleteRoutePrice"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/deleteRouteDesc"
+                app:layout_constraintTop_toBottomOf="@+id/deleteRouteDesc"
+                app:rippleColor="@color/gold" />
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="77dp"
+                android:gravity="end"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/deleteTicketNumber"
+                app:layout_constraintEnd_toEndOf="@+id/deleteRouteImage"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/deleteRouteDepartPlace"
+                app:layout_constraintTop_toTopOf="@+id/deleteRouteImage">
+
+                <ImageButton
+                    android:id="@+id/buttonPrevious"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@color/fui_transparent"
+                    android:contentDescription="@string/goes_to_the_previous_route"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/baseline_arrow_circle_left_24" />
+
+                <ImageButton
+                    android:id="@+id/buttonNext"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@color/fui_transparent"
+                    android:contentDescription="@string/goes_to_the_previous_route"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/baseline_arrow_circle_right_24" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
